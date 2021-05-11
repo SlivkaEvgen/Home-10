@@ -1,5 +1,6 @@
-import java.io.InputStream;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class T2 {
@@ -8,12 +9,11 @@ public class T2 {
     }
 
     public static void main(String[] args) {
-        List<String> names = Arrays.asList("Ivan","Peter","Dima","Kolia","Vasyl"); // dorabotat s task1
+        List<String> names = Arrays.asList("IVan","Peter","Dima","KOlia","VAsyl");
 
-        String namesStream = names.stream()
+        String namesStream = names.stream().map(String::toUpperCase)
                 .sorted(Comparator.reverseOrder())
-                .collect(Collectors.joining(", "))
-                .toUpperCase(Locale.ROOT);
+                .collect(Collectors.joining(", "));
         System.out.println(namesStream);
     }
 }

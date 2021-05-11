@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.List;
 
-public class T1 {     //gotovo!
+public class T1 {
 
     public static void main(String[] args) {
         List<String> names = Arrays.asList("Ivan", "Peter", "Dima", "Kolia", "Vasyl");

@@ -1,18 +1,13 @@
 import java.util.stream.Stream;
-
-import static java.lang.Math.pow;
-
-public class T4 {                      //GOTOVO!!!
-    private static long x;
+public class T4 {
 
     public static void main(String[] args) {
 
-        Stream<Long> longStream = generator(25214903917L, 11, 281474976710656L, 1);
+        generator(25214903917L,11L, (long) Math.pow(2,48)).limit(10).forEach(System.out::println);
     }
-    public static Stream<Long> generator(long a, long c, long m, long seed){
+    public static Stream<Long> generator(long a, long c, long m){
+      return Stream.iterate(2L,e->(a*e+c)%m);
 
-        Stream.iterate(seed, n->1*(a*pow(x,n) + c) % m<1000000, n->n+1).takeWhile(n -> n < 100000000).forEach(System.out::println);
-        return Stream.<Long>builder().build();
     }
 
 }
